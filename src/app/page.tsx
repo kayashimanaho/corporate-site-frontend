@@ -1,5 +1,7 @@
 import Link from 'next/link';
 import { getPosts, formatDate, stripHtml } from '@/lib/wordpress';
+import DOMPurify from 'isomorphic-dompurify';
+
 
 // サービス一覧
 const services = [
@@ -213,7 +215,11 @@ export default async function Home() {
 
           <div className="mt-10 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
             {posts.length > 0 ? (
-              posts.map((post) => (
+              posts.map((post) => {
+                // ここで1件ずつサニタイズを行う
+                const sanitizedTitle = DOMPurify.sanitize(post.title.rendered);
+                
+                return (
                 <article
                   key={post.id}
                   className="group relative flex flex-col overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm transition-all hover:border-emerald-200 hover:shadow-md"
@@ -226,7 +232,7 @@ export default async function Home() {
                       <h3 className="mt-3 text-lg font-semibold leading-6 text-slate-900 transition-colors group-hover:text-emerald-600">
                         <Link href={`/news/${post.slug}`}>
                           <span className="absolute inset-0" />
-                          <span dangerouslySetInnerHTML={{ __html: post.title.rendered }} />
+                          <span dangerouslySetInnerHTML={{ __html: sanitizedTitle }} />
                         </Link>
                       </h3>
                       <p className="mt-3 line-clamp-3 text-sm leading-6 text-slate-600">
@@ -235,7 +241,8 @@ export default async function Home() {
                     </div>
                   </div>
                 </article>
-              ))
+                );
+              })
             ) : (
               // 投稿がない場合のプレースホルダー
               [1, 2, 3].map((i) => (
