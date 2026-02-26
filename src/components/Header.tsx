@@ -20,7 +20,7 @@ export default function Header() {
           {/* Logo */}
           <div className="flex lg:flex-1">
             <Link href="/" className="-m-1.5 p-1.5">
-              <span className="text-2xl font-bold tracking-tight text-slate-900">
+              <span className="text-2xl font-bold tracking-tight text-slate-900 text-[2563eb]">
                 CORP<span className="text-emerald-600">.</span>
               </span>
             </Link>

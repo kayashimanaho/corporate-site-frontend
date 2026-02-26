@@ -77,7 +77,7 @@ export default async function Home() {
                 href="/contact"
                 className="rounded-full bg-emerald-600 px-8 py-4 text-sm font-semibold text-white shadow-sm transition-all hover:bg-emerald-500 hover:shadow-lg focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-emerald-600"
               >
-                無料相談を予約
+                お問い合わせはこちら
               </Link>
               <Link href="/services" className="group text-sm font-semibold leading-6 text-slate-900">
                 サービスを見る
@@ -296,7 +296,7 @@ export default async function Home() {
                 href="/contact"
                 className="rounded-full bg-white px-8 py-4 text-sm font-semibold text-emerald-600 shadow-sm transition-all hover:bg-emerald-50 hover:shadow-lg"
               >
-                無料相談を予約
+                お問い合わせはこちら
               </Link>
               <Link href="tel:03-1234-5678" className="text-sm font-semibold leading-6 text-white">
                 <span className="hidden sm:inline">お電話でのお問い合わせ：</span>03-1234-5678
