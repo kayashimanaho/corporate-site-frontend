@@ -32,7 +32,7 @@ export default async function PostPage({ params }: Props) {
     <div className="bg-white">
       <article className="mx-auto max-w-3xl px-6 py-32 lg:px-8">
         {/* 戻るリンク */}
-        <Link href="/" className="group inline-flex items-center text-sm font-medium text-emerald-600 hover:text-emerald-500">
+        <Link href="/news" className="group inline-flex items-center text-sm font-medium text-emerald-600 hover:text-emerald-500">
           <span className="mr-2 transition-transform group-hover:-translate-x-1">←</span>
           お知らせ一覧へ戻る
         </Link>
