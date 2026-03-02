@@ -19,7 +19,7 @@ export default async function NewsListPage() {
             最新のニュースやプレスリリースをお届けします。
           </p>
 
-          <div className="mt-16 space-y-16 border-t border-slate-200 pt-10 sm:mt-20 sm:pt-16">
+          <div className="mx-auto mt-16 grid max-w-2xl grid-cols-1 gap-x-8 gap-y-12 sm:mt-20 lg:mx-0 lg:max-w-none lg:grid-cols-3">
             {posts.map((post) => {
               // タイトルをサニタイズ
               const sanitizedTitle = DOMPurify.sanitize(post.title.rendered);
